@@ -15,6 +15,7 @@ namespace Gladiator_Fight
             int damage2 = rand.Next(25, 50);
             int armor2= rand.Next(15, 35);
             int hitNumber = 0 ;
+            int divider = 100;
 
             Console.WriteLine($"Гладиатор1: \nЗдоровье - {health1}\nЗашита - {armor1}\nАтака - {damage1}\n");
             Console.WriteLine($"Гладиатор2: \nЗдоровье - {health2}\nЗашита - {armor2}\nАтака - {damage2}\n");
@@ -22,8 +23,8 @@ namespace Gladiator_Fight
 
             while (health1 > 0 && health2 > 0)
             {
-                health1 -= Convert.ToSingle(rand.Next(0, damage2)) / 100 * armor1;
-                health2 -= Convert.ToSingle(rand.Next(0, damage1)) / 100 * armor2;
+                health1 -= Convert.ToSingle(rand.Next(0, damage2)) / divider * armor1;
+                health2 -= Convert.ToSingle(rand.Next(0, damage1)) / divider * armor2;
                 Console.WriteLine($"Стычка №{++hitNumber}");
                 Console.WriteLine($"Гладиатор1 - {health1} здоровья.");
                 Console.WriteLine($"Гладиатор2 - {health2} здоровья.\n");
