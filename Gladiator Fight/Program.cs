@@ -8,7 +8,7 @@ namespace Gladiator_Fight
         public static void Main(string[] args)
         {
             Random rand = new Random();
-            float health1 = rand.Next(90, 101);
+            float health1 = rand.Next(90, 101); 
             int damage1 = rand.Next(5, 21);
             int armor1= rand.Next(25, 66) ;
             float health2 = rand.Next(80, 151);
