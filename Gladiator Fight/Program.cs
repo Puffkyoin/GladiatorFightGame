@@ -8,10 +8,10 @@ namespace Gladiator_Fight
         public static void Main(string[] args)
         {
             Random rand = new Random();
-            int minHealth = 100, maxHealth = 201;
-            // базовые минимальные и максимальные значения для armor и damage
-            int minValue = 25, maxValue = 50;
-            // константа преимущества
+            int minHealth = 100;
+            int maxHealth = 201;
+            int minValue = 25;
+            int maxValue = 50;
             int advantage = 25;
             int health1 = rand.Next(minHealth, maxHealth);
             int damage1 = rand.Next(minValue + advantage, maxValue + advantage);
@@ -47,7 +47,7 @@ namespace Gladiator_Fight
             }
             else if (health2 <= 0)
             {
-                Console.WriteLine("Второй гладиатор повержен!");
+                Console.WriteLine("Второй гладиатор пал!");
             }
         }
     }
