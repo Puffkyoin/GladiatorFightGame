@@ -7,18 +7,18 @@ namespace Gladiator_Fight
     {
         public static void Main(string[] args)
         {
-            Random rand = new Random();
+            Random random = new Random();
             int minHealth = 100;
             int maxHealth = 201;
             int minValue = 25;
             int maxValue = 50;
             int advantage = 25;
-            int health1 = rand.Next(minHealth, maxHealth);
-            int damage1 = rand.Next(minValue + advantage, maxValue + advantage);
-            int armor1 = rand.Next(minValue, maxValue);
-            int health2 = rand.Next(minHealth, maxHealth);
-            int damage2 = rand.Next(minValue, maxValue);
-            int armor2 = rand.Next(minValue + advantage, maxValue + advantage);
+            int health1 = random.Next(minHealth, maxHealth);
+            int damage1 = random.Next(minValue + advantage, maxValue + advantage);
+            int armor1 = random.Next(minValue, maxValue);
+            int health2 = random.Next(minHealth, maxHealth);
+            int damage2 = random.Next(minValue, maxValue);
+            int armor2 = random.Next(minValue + advantage, maxValue + advantage);
             int hitNumber = 0;
             int divider = 100;
 
@@ -30,8 +30,8 @@ namespace Gladiator_Fight
             while (health1 > 0 && health2 > 0)
             {
                 // формула health -= damage * (1 - armor / 100)
-                health1 -= Convert.ToInt32(rand.Next(0, damage2) * (1 - Convert.ToSingle(armor1 / divider)));
-                health2 -= Convert.ToInt32(rand.Next(0, damage1) * (1 - Convert.ToSingle(armor2 / divider)));
+                health1 -= Convert.ToInt32(random.Next(0, damage2) * (1 - Convert.ToSingle(armor1 / divider)));
+                health2 -= Convert.ToInt32(random.Next(0, damage1) * (1 - Convert.ToSingle(armor2 / divider)));
                 Console.WriteLine($"Стычка №{++hitNumber}");
                 Console.WriteLine($"Гладиатор1 - {health1} здоровья.");
                 Console.WriteLine($"Гладиатор2 - {health2} здоровья.\n");
